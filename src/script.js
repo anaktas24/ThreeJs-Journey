@@ -6,7 +6,7 @@ import * as dat from 'lil-gui'
 
 /**
  * Base
- */
+*/
 // Debug
 const gui = new dat.GUI()
 
@@ -16,7 +16,12 @@ const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
 
+const spotLight = new THREE.SpotLight(0x78ff00, 0.5, 10, Math.PI * 0.1, 0.25, 1)
+spotLight.position.set(0, 2, 3)
+scene.add(spotLight)
 /**
+ const spotLightHelper = new THREE.SpotLightHelper(spotLight)
+ scene.add(spotLightHelper)
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
